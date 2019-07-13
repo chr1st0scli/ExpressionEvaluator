@@ -1,5 +1,5 @@
 # ExpressionEvaluator
-A mathematical expression evaluator with a tokenizer, parser and evaluator.
+A mathematical expression evaluator library with a tokenizer, parser and evaluator.
 
 It supports binary and unary expressions, parentheses, addition, subtraction, multiplication and division.
 
