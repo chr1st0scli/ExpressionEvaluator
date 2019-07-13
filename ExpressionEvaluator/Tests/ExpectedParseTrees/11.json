@@ -1,0 +1,9 @@
+{
+  "LeftOperand": "4",
+  "RightExpression": {
+    "LeftOperand": "2",
+    "Operator": "+"
+  },
+  "Operator": "/",
+  "Raw": "4 / +2"
+}

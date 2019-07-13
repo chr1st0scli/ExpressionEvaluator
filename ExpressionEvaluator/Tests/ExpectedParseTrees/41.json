@@ -1,0 +1,42 @@
+{
+  "LeftExpression": {
+    "RightOperand": "5",
+    "LeftExpression": {
+      "RightOperand": "199",
+      "LeftExpression": {
+        "RightOperand": "43",
+        "LeftExpression": {
+          "RightOperand": "3",
+          "LeftExpression": {
+            "LeftOperand": "235",
+            "RightOperand": "12",
+            "Operator": "/"
+          },
+          "Operator": "/"
+        },
+        "Operator": "-"
+      },
+      "Operator": "+"
+    },
+    "Operator": "-"
+  },
+  "RightExpression": {
+    "RightOperand": "7",
+    "LeftExpression": {
+      "RightOperand": "5",
+      "LeftExpression": {
+        "RightOperand": "21",
+        "LeftExpression": {
+          "LeftOperand": "3",
+          "RightOperand": "2",
+          "Operator": "*"
+        },
+        "Operator": "*"
+      },
+      "Operator": "*"
+    },
+    "Operator": "/"
+  },
+  "Operator": "+",
+  "Raw": "235 / 12 /3-43 + 199 -5 + 3 * 2 * 21 * 5 / 7"
+}

@@ -1,0 +1,9 @@
+{
+  "LeftExpression": {
+    "LeftExpression": {
+      "LeftOperand": "20",
+      "Operator": "-"
+    }
+  },
+  "Raw": "(-20)"
+}

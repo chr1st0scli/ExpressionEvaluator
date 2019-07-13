@@ -1,0 +1,10 @@
+{
+  "RightOperand": "3",
+  "LeftExpression": {
+    "LeftOperand": "7",
+    "RightOperand": "5",
+    "Operator": "/"
+  },
+  "Operator": "+",
+  "Raw": "7/5 + 3"
+}

@@ -1,0 +1,21 @@
+{
+  "LeftOperand": "3",
+  "RightExpression": {
+    "LeftExpression": {
+      "LeftExpression": {
+        "LeftExpression": {
+          "LeftExpression": {
+            "LeftOperand": "5",
+            "Operator": "+"
+          },
+          "Operator": "-"
+        },
+        "Operator": "+"
+      },
+      "Operator": "-"
+    },
+    "Operator": "+"
+  },
+  "Operator": "-",
+  "Raw": "3 -+-+-+ 5"
+}

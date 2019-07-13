@@ -1,0 +1,26 @@
+{
+  "LeftOperand": "6",
+  "RightExpression": {
+    "LeftOperand": "7",
+    "RightExpression": {
+      "RightOperand": "9",
+      "LeftExpression": {
+        "LeftOperand": "8",
+        "RightExpression": {
+          "LeftOperand": "3",
+          "RightExpression": {
+            "LeftOperand": "2",
+            "RightOperand": "1",
+            "Operator": "+"
+          },
+          "Operator": "/"
+        },
+        "Operator": "+"
+      },
+      "Operator": "*"
+    },
+    "Operator": "-"
+  },
+  "Operator": "+",
+  "Raw": "6 + (7 - (8 + 3 / (2 + 1)) * 9)"
+}

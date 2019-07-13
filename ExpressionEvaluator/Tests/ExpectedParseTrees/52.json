@@ -1,0 +1,14 @@
+{
+  "LeftExpression": {
+    "LeftOperand": "3",
+    "RightOperand": "2",
+    "Operator": "*"
+  },
+  "RightExpression": {
+    "LeftOperand": "4",
+    "RightOperand": "1",
+    "Operator": "-"
+  },
+  "Operator": "*",
+  "Raw": "3 * 2 * (4-1)"
+}

@@ -1,0 +1,22 @@
+{
+  "LeftOperand": "2",
+  "RightExpression": {
+    "RightOperand": "3",
+    "LeftExpression": {
+      "RightOperand": "5",
+      "LeftExpression": {
+        "RightOperand": "2",
+        "LeftExpression": {
+          "LeftOperand": "4",
+          "RightOperand": "5",
+          "Operator": "-"
+        },
+        "Operator": "/"
+      },
+      "Operator": "+"
+    },
+    "Operator": "/"
+  },
+  "Operator": "+",
+  "Raw": "2+ ((4-5) /2 + 5)/3"
+}

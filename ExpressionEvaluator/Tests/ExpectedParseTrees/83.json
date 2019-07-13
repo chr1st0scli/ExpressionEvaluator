@@ -1,0 +1,53 @@
+{
+  "LeftExpression": {
+    "LeftExpression": {
+      "LeftOperand": "3",
+      "RightExpression": {
+        "LeftExpression": {
+          "RightOperand": "5",
+          "LeftExpression": {
+            "LeftOperand": "7",
+            "Operator": "-"
+          },
+          "Operator": "/"
+        },
+        "RightExpression": {
+          "LeftOperand": "2",
+          "Operator": "-"
+        },
+        "Operator": "/"
+      },
+      "Operator": "+"
+    },
+    "RightExpression": {
+      "RightOperand": "3",
+      "LeftExpression": {
+        "LeftExpression": {
+          "RightOperand": "2",
+          "LeftExpression": {
+            "RightOperand": "5",
+            "LeftExpression": {
+              "LeftOperand": "4",
+              "Operator": "-"
+            },
+            "Operator": "-"
+          },
+          "Operator": "/"
+        },
+        "RightExpression": {
+          "LeftOperand": "5",
+          "Operator": "-"
+        },
+        "Operator": "+"
+      },
+      "Operator": "/"
+    },
+    "Operator": "-"
+  },
+  "RightExpression": {
+    "LeftOperand": "4",
+    "Operator": "-"
+  },
+  "Operator": "+",
+  "Raw": "3 + -7 / 5 / -2 - ((-4-5) / 2 + -5)/3 + -4"
+}

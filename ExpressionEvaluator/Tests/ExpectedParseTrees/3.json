@@ -1,0 +1,16 @@
+{
+  "LeftExpression": {
+    "LeftExpression": {
+      "LeftExpression": {
+        "LeftExpression": {
+          "LeftOperand": "5",
+          "Operator": "+"
+        },
+        "Operator": "-"
+      },
+      "Operator": "+"
+    },
+    "Operator": "-"
+  },
+  "Raw": "-+-+5"
+}

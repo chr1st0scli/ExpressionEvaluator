@@ -1,0 +1,13 @@
+{
+  "RightOperand": "2",
+  "LeftExpression": {
+    "RightOperand": "20",
+    "LeftExpression": {
+      "LeftOperand": "12",
+      "Operator": "-"
+    },
+    "Operator": "+"
+  },
+  "Operator": "-",
+  "Raw": "(-12 + 20) -2"
+}

@@ -1,0 +1,16 @@
+{
+  "LeftExpression": {
+    "LeftExpression": {
+      "LeftOperand": "0"
+    }
+  },
+  "RightExpression": {
+    "LeftExpression": {
+      "LeftExpression": {
+        "LeftOperand": "53"
+      }
+    }
+  },
+  "Operator": "-",
+  "Raw": "((0)) -   (((53)))"
+}

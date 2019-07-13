@@ -1,0 +1,26 @@
+{
+  "RightOperand": "1",
+  "LeftExpression": {
+    "LeftExpression": {
+      "LeftExpression": {
+        "LeftOperand": "4",
+        "RightOperand": "3",
+        "Operator": "-"
+      },
+      "RightExpression": {
+        "LeftOperand": "2",
+        "RightOperand": "5",
+        "Operator": "+"
+      },
+      "Operator": "*"
+    },
+    "RightExpression": {
+      "LeftOperand": "7",
+      "RightOperand": "2",
+      "Operator": "/"
+    },
+    "Operator": "-"
+  },
+  "Operator": "+",
+  "Raw": "(4-3)* (2 + 5) - (7/2) + 1"
+}

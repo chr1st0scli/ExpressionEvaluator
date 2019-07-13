@@ -1,0 +1,36 @@
+{
+  "LeftExpression": {
+    "LeftOperand": "2",
+    "RightExpression": {
+      "LeftExpression": {
+        "LeftExpression": {
+          "RightOperand": "5",
+          "LeftExpression": {
+            "LeftExpression": {
+              "LeftExpression": {
+                "RightOperand": "4",
+                "LeftExpression": {
+                  "LeftOperand": "3",
+                  "Operator": "-"
+                },
+                "Operator": "+"
+              },
+              "Operator": "-"
+            },
+            "Operator": "-"
+          },
+          "Operator": "+"
+        },
+        "Operator": "+"
+      },
+      "Operator": "-"
+    },
+    "Operator": "+"
+  },
+  "RightExpression": {
+    "LeftOperand": "1",
+    "Operator": "+"
+  },
+  "Operator": "-",
+  "Raw": "2 + -+(--(-3 + 4) + 5) - +1"
+}

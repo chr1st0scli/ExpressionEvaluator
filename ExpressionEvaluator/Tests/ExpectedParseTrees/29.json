@@ -1,0 +1,10 @@
+{
+  "RightOperand": "1",
+  "LeftExpression": {
+    "LeftExpression": {
+      "LeftOperand": "0"
+    }
+  },
+  "Operator": "-",
+  "Raw": "((0)) -   1"
+}

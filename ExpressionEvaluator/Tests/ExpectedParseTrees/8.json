@@ -1,0 +1,9 @@
+{
+  "RightOperand": "2",
+  "LeftExpression": {
+    "LeftOperand": "3",
+    "Operator": "-"
+  },
+  "Operator": "*",
+  "Raw": "-3 * 2"
+}
