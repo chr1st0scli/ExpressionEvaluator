@@ -2,6 +2,9 @@
 
 namespace ExpressionEvaluator.Parsing
 {
+    /// <summary>
+    /// Expression extensions that are Parser related.
+    /// </summary>
     public static class ExpressionExtensions
     {
         public static void AddOperand(this Expression expr, Token operand)

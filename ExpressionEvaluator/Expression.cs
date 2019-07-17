@@ -2,6 +2,9 @@
 
 namespace ExpressionEvaluator
 {
+    /// <summary>
+    /// Represents a language's expression that is composed as a tree.
+    /// </summary>
     [Serializable]
     public class Expression
     {

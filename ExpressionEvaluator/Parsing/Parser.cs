@@ -15,6 +15,15 @@ namespace ExpressionEvaluator.Parsing
             tokenizer = new Tokenizer(expression);
         }
 
+        /// <summary>
+        /// Builds an expression tree to be evaluated. Expressions with higher precedence are nearest 
+        /// to the bottom of the tree, while expressions with lower precedence are above and must be 
+        /// evaluated last. Binary expressions have two operands (left and right), while unary expressions 
+        /// only have a left part. The tree is built in a left associative manner.
+        /// </summary>
+        /// <returns>The top expression of the tree that must be evaluated last.</returns>
+        /// <exception cref="ExpressionEvaluator.Exceptions.IllegalTokenException">Thrown if a token is not expected where it occurs.</exception>
+        /// <exception cref="ExpressionEvaluator.Exceptions.UnmatchedParenthesisException">Thrown if an opening parenthesis is not closed.</exception>
         public Expression Parse()
         {
             tokenizer.Tokenize();
@@ -33,9 +42,9 @@ namespace ExpressionEvaluator.Parsing
                 
                 var tmpCurrExpr = currExpr;
 
-                if (token.TokenType == TokenOption.SYMBOL)
+                if (token.TokenType == TokenType.SYMBOL)
                     currExpr.AddOperand(token);
-                else if (token.TokenType == TokenOption.OPEN_PAREN)
+                else if (token.TokenType == TokenType.OPEN_PAREN)
                 {
                     unmatchedParens++;
                     if (parenContExprs == null)
@@ -44,7 +53,7 @@ namespace ExpressionEvaluator.Parsing
                     currExpr = new Expression();
                     tmpCurrExpr?.AddExpression(currExpr);
                 }
-                else if (token.TokenType == TokenOption.CLOSE_PAREN)
+                else if (token.TokenType == TokenType.CLOSE_PAREN)
                 {
                     unmatchedParens--;
                     if (parenContExprs == null || unmatchedParens < 0 || unmatchedParens >= parenContExprs.Count)
@@ -56,8 +65,8 @@ namespace ExpressionEvaluator.Parsing
                 {
                     if (prevToken == null 
                         || (prevToken != null 
-                            && (prevToken.IsOperator || prevToken.TokenType == TokenOption.OPEN_PAREN))
-                        && (token.TokenType == TokenOption.ADD || token.TokenType == TokenOption.SUBTRACT))
+                            && (prevToken.IsOperator || prevToken.TokenType == TokenType.OPEN_PAREN))
+                        && (token.TokenType == TokenType.ADD || token.TokenType == TokenType.SUBTRACT))
                     {
                         currExpr = new Expression() { IsUnary = true };
                         tmpCurrExpr?.AddExpression(currExpr);

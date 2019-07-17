@@ -2,12 +2,15 @@
 
 namespace ExpressionEvaluator
 {
+    /// <summary>
+    /// Represents the minimum element of the language.
+    /// </summary>
     [Serializable]
-    public class Token : IComparable
+    public class Token : IComparable<Token>
     {
         protected string value;
         protected int position;
-        protected TokenOption tokenType;
+        protected TokenType tokenType;
 
         public Token(string value, int position = 0)
         {
@@ -17,37 +20,37 @@ namespace ExpressionEvaluator
             switch (value)
             {
                 case "+":
-                    tokenType = TokenOption.ADD;
+                    tokenType = TokenType.ADD;
                     break;
                 case "-":
-                    tokenType = TokenOption.SUBTRACT;
+                    tokenType = TokenType.SUBTRACT;
                     break;
                 case "*":
-                    tokenType = TokenOption.MULTIPLY;
+                    tokenType = TokenType.MULTIPLY;
                     break;
                 case "/":
-                    tokenType = TokenOption.DIVIDE;
+                    tokenType = TokenType.DIVIDE;
                     break;
                 case "(":
-                    tokenType = TokenOption.OPEN_PAREN;
+                    tokenType = TokenType.OPEN_PAREN;
                     break;
                 case ")":
-                    tokenType = TokenOption.CLOSE_PAREN;
+                    tokenType = TokenType.CLOSE_PAREN;
                     break;
                 default:
-                    tokenType = TokenOption.SYMBOL;
+                    tokenType = TokenType.SYMBOL;
                     break;
             }
         }
 
-        public TokenOption TokenType => tokenType;
+        public TokenType TokenType => tokenType;
 
         public string Value => value;
 
         public int Position => position;
 
-        public bool IsOperator => tokenType == TokenOption.ADD || tokenType == TokenOption.SUBTRACT || tokenType == TokenOption.MULTIPLY || tokenType == TokenOption.DIVIDE;
+        public bool IsOperator => tokenType == TokenType.ADD || tokenType == TokenType.SUBTRACT || tokenType == TokenType.MULTIPLY || tokenType == TokenType.DIVIDE;
 
-        public int CompareTo(object obj) => Language.GetPrecedence(tokenType) - Language.GetPrecedence(((Token)obj).tokenType);
+        public int CompareTo(Token token) => Language.GetPrecedence(tokenType) - Language.GetPrecedence(token.tokenType);
     }
 }

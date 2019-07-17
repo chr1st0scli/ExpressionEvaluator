@@ -12,11 +12,14 @@ namespace ExpressionEvaluator
         public Tokenizer(string expression)
         {
             if (string.IsNullOrWhiteSpace(expression))
-                throw new ArgumentException("", nameof(expression));
+                throw new ArgumentException("No expression is given.", nameof(expression));
             this.expression = expression;
             tokens = new List<Token>();
         }
 
+        /// <summary>
+        /// Analyzes an expression to tokens that can be later processed.
+        /// </summary>
         public void Tokenize()
         {
             void FlushToTokens(StringBuilder strBuilder)
