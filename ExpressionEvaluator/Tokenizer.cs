@@ -4,6 +4,10 @@ using System.Text;
 
 namespace ExpressionEvaluator
 {
+    /// <summary>
+    /// Produces a series of tokens, out of a mathematical expression, 
+    /// that can be fed to a parser.
+    /// </summary>
     public class Tokenizer
     {
         protected IList<Token> tokens;

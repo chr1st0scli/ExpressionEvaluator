@@ -4,6 +4,10 @@ using System.Runtime.Serialization.Formatters.Binary;
 
 namespace ExpressionEvaluator
 {
+    /// <summary>
+    /// Saves a parser's output, i.e. an expression parse tree, on disk 
+    /// so that it can be later fed to an evaluator.
+    /// </summary>
     public static class Compiler
     {
         /// <summary>

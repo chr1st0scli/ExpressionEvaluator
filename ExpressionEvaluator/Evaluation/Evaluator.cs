@@ -3,6 +3,10 @@ using System;
 
 namespace ExpressionEvaluator.Evaluation
 {
+    /// <summary>
+    /// Evaluates a parse tree, i.e. it produces a result out of it.
+    /// </summary>
+    /// <typeparam name="T"></typeparam>
     public abstract class Evaluator<T>
     {
         public Func<Token, T> ValueForToken { get; set; }

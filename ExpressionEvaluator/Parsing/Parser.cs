@@ -4,6 +4,9 @@ using System.Collections.Generic;
 
 namespace ExpressionEvaluator.Parsing
 {
+    /// <summary>
+    /// Builds an expression parse tree, out of a sequence of tokens, which makes sense to an evaluator.
+    /// </summary>
     public class Parser
     {
         protected Tokenizer tokenizer;
@@ -21,9 +24,9 @@ namespace ExpressionEvaluator.Parsing
         /// evaluated last. Binary expressions have two operands (left and right), while unary expressions 
         /// only have a left part. The tree is built in a left associative manner.
         /// </summary>
-        /// <returns>The top expression of the tree that must be evaluated last.</returns>
+        /// <returns>The top (or root) expression of the tree that must be evaluated last.</returns>
         /// <exception cref="ExpressionEvaluator.Exceptions.IllegalTokenException">Thrown if a token is not expected where it occurs.</exception>
-        /// <exception cref="ExpressionEvaluator.Exceptions.UnmatchedParenthesisException">Thrown if an opening parenthesis is not closed.</exception>
+        /// <exception cref="ExpressionEvaluator.Exceptions.UnmatchedParenthesisException">Thrown if an opening or closing parenthesis is not matched.</exception>
         public Expression Parse()
         {
             tokenizer.Tokenize();
@@ -51,35 +54,29 @@ namespace ExpressionEvaluator.Parsing
                         parenContExprs = new List<Expression>();
                     parenContExprs.Add(currExpr);
                     currExpr = new Expression();
-                    tmpCurrExpr?.AddExpression(currExpr);
+                    tmpCurrExpr.AddExpression(currExpr);
                 }
                 else if (token.TokenType == TokenType.CLOSE_PAREN)
                 {
                     unmatchedParens--;
-                    if (parenContExprs == null || unmatchedParens < 0 || unmatchedParens >= parenContExprs.Count)
+                    if (parenContExprs == null || unmatchedParens < 0)
                         throw new UnmatchedParenthesisException();
                     currExpr = parenContExprs[unmatchedParens];
                     parenContExprs.RemoveAt(unmatchedParens);
                 }
                 else if (token.IsOperator)
                 {
-                    if (prevToken == null 
-                        || (prevToken != null 
-                            && (prevToken.IsOperator || prevToken.TokenType == TokenType.OPEN_PAREN))
+                    if ((prevToken == null
+                        || (prevToken != null && (prevToken.IsOperator || prevToken.TokenType == TokenType.OPEN_PAREN)))
                         && (token.TokenType == TokenType.ADD || token.TokenType == TokenType.SUBTRACT))
                     {
                         currExpr = new Expression() { IsUnary = true };
-                        tmpCurrExpr?.AddExpression(currExpr);
+                        tmpCurrExpr.AddExpression(currExpr);
                     }
                     else if (currExpr.Operator != null)
                     {
                         if (currExpr.IsUnary)
-                        {
-                            if (currExpr == currExpr.NonUnaryParent)
-                                currExpr = currExpr.MoveInNewBelow();
-                            else
-                                currExpr = currExpr.NonUnaryParent;
-                        }
+                            currExpr = currExpr.NonUnaryParent;
 
                         if (currExpr.Operator != null)
                         {
