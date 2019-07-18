@@ -1,11 +1,12 @@
-﻿using ExpressionEvaluator.Evaluation;
+﻿using ExpressionEvaluator;
+using ExpressionEvaluator.Evaluation;
 using ExpressionEvaluator.Parsing;
 using System;
 using System.Collections.Generic;
 using System.Globalization;
 using Xunit;
 
-namespace ExpressionEvaluator.Tests
+namespace ExpressionEvaluatorTests
 {
     [Trait("Evaluator", "EvaluatorTester")]
     public class EvaluatorTester

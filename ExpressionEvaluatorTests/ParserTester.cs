@@ -4,7 +4,7 @@ using System;
 using System.IO;
 using Xunit;
 
-namespace ExpressionEvaluator.Tests
+namespace ExpressionEvaluatorTests
 {
     [Trait("Parser", "ParserTester")]
     public class ParserTester
@@ -99,7 +99,7 @@ namespace ExpressionEvaluator.Tests
         {
             //Arrange
             var parser = new Parser(expression);
-            string jsonToMatch = File.ReadAllText("Tests\\ExpectedParseTrees\\" + fileName).Trim();
+            string jsonToMatch = File.ReadAllText("ExpectedParseTrees\\" + fileName).Trim();
 
             //Act
             var expr = parser.Parse();

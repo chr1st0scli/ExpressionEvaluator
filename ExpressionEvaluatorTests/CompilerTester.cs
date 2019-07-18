@@ -1,9 +1,10 @@
-﻿using ExpressionEvaluator.Parsing;
+﻿using ExpressionEvaluator;
+using ExpressionEvaluator.Parsing;
 using System;
 using System.IO;
 using Xunit;
 
-namespace ExpressionEvaluator.Tests
+namespace ExpressionEvaluatorTests
 {
     [Trait("Compiler", "CompilerTester")]
     public class CompilerTester

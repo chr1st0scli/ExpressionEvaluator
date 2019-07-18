@@ -1,8 +1,9 @@
-﻿using Newtonsoft.Json;
+﻿using ExpressionEvaluator;
+using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using System.Linq;
 
-namespace ExpressionEvaluator.Tests
+namespace ExpressionEvaluatorTests
 {
     public static class ExpressionExtensions
     {
